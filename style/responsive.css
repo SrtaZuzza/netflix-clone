@@ -1,0 +1,21 @@
+@media screen and (max-width: 770px) {
+    .featured .description {
+        max-width: 90%;
+        margin-bottom: 10%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .popDialog:target>div{
+        margin: 25% auto;
+     }
+     .above {
+        margin-top: -20%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .popDialog .watch iframe {
+        height: 200px;
+     }
+}
