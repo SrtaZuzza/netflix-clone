@@ -6,13 +6,8 @@
     --lilac: #6b74b2;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* -------------------------------------------- Body -- */
+
 html, body {
     height: 100%;
     margin: 0;
@@ -23,6 +18,12 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--default);
     padding-top: 3.5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 a {
@@ -41,7 +42,15 @@ a:hover {
 
 .btn:focus, .btn:active:focus {
     box-shadow: none;
-  }
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    background: #fff;
+}
+
+::-webkit-scrollbar {
+    background: #c1d9f2;
+}
 
 /* -------------------------------------------- Navbar -- */
 
@@ -118,7 +127,7 @@ a:hover {
     bottom: 0;
     left: 0;
     background: var(--shadow);
-	backdrop-filter: blur(2px) saturate(150%);
+    backdrop-filter: blur(2px) saturate(150%);
     z-index: 99999;
     opacity: 0;
     -webkit-transition: opacity 200ms ease-in-out;
@@ -130,12 +139,7 @@ a:hover {
 .popDialog:target{
     opacity: 1;
     pointer-events: auto;
- }
-
-.popDialog:target>div{
-	background: var(--blue);
-    margin: 8% auto;
- }
+}
 
 .popDialog>div{
     -webkit-transition: all 100ms ease-in;
@@ -146,6 +150,11 @@ a:hover {
     position: relative;
     margin:5% auto;
     padding: 2%;
+}
+
+.popDialog:target>div{
+    background: var(--blue);
+    margin: 8% auto;
 }
 
 .close {
