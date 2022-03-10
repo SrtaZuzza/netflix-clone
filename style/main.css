@@ -2,8 +2,10 @@
     --blue: #293268;
     --dark-blue: #12173d;
     --default: rgb(214, 221, 233);
-    --shadow: rgba(0,0,0,.6);
+    --shadow: rgba(0,0,0,.5);
+    --light: rgba(255,255,255,.5);
     --lilac: #6b74b2;
+    --cottage: #d74459;
 }
 
 /* -------------------------------------------- Body -- */
@@ -14,10 +16,9 @@ html, body {
 }
 
 body {
-    background: var(--blue);
+    background: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--default);
-    padding-top: 3.5rem;
+    color: var(--blue);
 }
 
 * {
@@ -52,10 +53,23 @@ a:hover {
     background: #c1d9f2;
 }
 
+.cottage {
+    color: var(--cottage);
+}
+
+@supports (backdrop-filter: blur(8px) saturate(250%)) {
+    .glass {
+        backdrop-filter: blur(8px) saturate(250%);
+        background: var(--light);
+        border-bottom: 1px solid rgba(255,255,255,.3);
+    }
+}
+
 /* -------------------------------------------- Navbar -- */
 
 .navbar {
-    height: 3.5rem;
+    height: 5rem;
+    font-weight: 600;
 }
 
 .logo {
@@ -64,14 +78,8 @@ a:hover {
     font-weight: 800;
 }
 
-.bg-color {
-    background-color: var(--blue)!important;
-    color: white;
-}
-
-.dropdown-menu-dark {
-    background-color: var(--dark-blue)!important;
-    color: white;
+.navbar-light .navbar-nav .nav-link {
+    color: black;
 }
 
 .form-control {
@@ -88,14 +96,25 @@ a:hover {
     font-size: 30px;
 }
 
+.square {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 60vh;
+    padding: 2.5%;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 15px;
+    box-shadow: 0 0 5em var(--dark-blue);
+}
+
 .featured {
-    background: linear-gradient(var(--shadow), var(--shadow)), url(../img/172444.webp);
+    background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url(../img/172444.webp);
     background-size: cover;
-    color: white;
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 5rem 0;
+    padding: 9rem 0 5rem 0;
 }
 
 .featured img {
@@ -103,12 +122,10 @@ a:hover {
     height: auto;
 }
 
-.featured .description {
-    max-width: 40%;
-    height: 6rem;
-}
-
 .featured .container .btn {
+    border: none;
+    border-radius: 100px;
+    background-color: var(--cottage);
     font-weight: 600;
     margin: 6px 6px 6px 0;
     width: 180px;
@@ -153,12 +170,12 @@ a:hover {
 }
 
 .popDialog:target>div{
-    background: var(--blue);
+    background-color: var(--default);
     margin: 8% auto;
 }
 
 .close {
-    color: var(--lilac);
+    color: var(--cottage);
     position: absolute;
     top: -50px;
     right: 1%;
@@ -223,7 +240,7 @@ a:hover {
 /* -------------------------------------------- Footer -- */
 
 footer {
-    background-color: var(--dark-blue);
+    background-color: var(--default);
     position: sticky;
 }
 
